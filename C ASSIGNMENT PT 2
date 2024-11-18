@@ -1,0 +1,41 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+int main() {
+    vector<int> grades;
+    int grade;
+
+    while (true) {
+        cin >> grade;
+        if (grade == -1) {
+            break;
+        }
+        grades.push_back(grade);
+    }
+
+    
+    int maxGrade = *max_element(grades.begin(), grades.end());
+
+    
+    int* histogram = new int[maxGrade + 1];
+    fill_n(histogram, maxGrade + 1, 0);
+
+    
+    for (int grade : grades) {
+        histogram[grade]++;
+    }
+
+    
+    for (int i = 0; i <= maxGrade; i++) {
+        if (histogram[i] > 0) {
+            cout << "Number of " << i << "'s: " << histogram[i] << endl;
+        }
+    }
+
+    delete[] histogram;
+
+    return 0;
+}

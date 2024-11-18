@@ -26,9 +26,9 @@ int main() {
     reverseString(str2);
     reverseString(str3);
 
-    cout << str1 << endl; // olleh
-    cout << str2 << endl; // dlrow
-    cout << str3 << endl; // racecar
+    cout << str1 << endl; 
+    cout << str2 << endl; 
+    cout << str3 << endl; 
 
     return 0;
 }

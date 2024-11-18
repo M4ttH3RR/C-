@@ -1,0 +1,34 @@
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+void reverseString(char *str) {
+    int len = strlen(str);
+    char *front = str;
+    char *rear = str + len - 1;
+
+    while (front < rear) {
+        char temp = *front;
+        *front = *rear;
+        *rear = temp;
+        front++;
+        rear--;
+    }
+}
+
+int main() {
+    char str1[] = "hello";
+    char str2[] = "world";
+    char str3[] = "racecar";
+
+    reverseString(str1);
+    reverseString(str2);
+    reverseString(str3);
+
+    cout << str1 << endl; // olleh
+    cout << str2 << endl; // dlrow
+    cout << str3 << endl; // racecar
+
+    return 0;
+}
